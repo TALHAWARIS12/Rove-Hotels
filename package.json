@@ -2,6 +2,9 @@
   "name": "rove-downtown-concierge",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "dev:host": "next dev -H 0.0.0.0",
@@ -12,7 +15,8 @@
     "db:studio": "prisma studio",
     "ingest": "tsx scripts/ingest-kb.ts",
     "test:unit": "vitest run",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.27.0",

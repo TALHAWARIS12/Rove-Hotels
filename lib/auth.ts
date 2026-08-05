@@ -3,15 +3,6 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { prisma } from "./prisma";
 
-// Ensure NEXTAUTH_URL is always a valid HTTP/HTTPS URL during build/prerender time
-if (!process.env.NEXTAUTH_URL || !process.env.NEXTAUTH_URL.startsWith("http")) {
-  process.env.NEXTAUTH_URL = process.env.RENDER_EXTERNAL_URL || "http://localhost:3000";
-}
-
-if (!process.env.NEXTAUTH_SECRET) {
-  process.env.NEXTAUTH_SECRET = "rove_super_secret_auth_key_2026_change_in_prod";
-}
-
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({

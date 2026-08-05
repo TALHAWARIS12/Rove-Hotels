@@ -81,7 +81,7 @@ export default function AdminUnansweredPage() {
           questions.map((q) => (
             <div key={q.id} className="card p-5 space-y-3">
               <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-2">
-                <span className="text-sm font-bold" style={{ color: "var(--text-primary)" }}>"{q.questionText}"</span>
+                <span className="text-sm font-bold" style={{ color: "var(--text-primary)" }}>&quot;{q.questionText}&quot;</span>
                 <div className="flex items-center space-x-2">
                   <span className="badge badge-muted">
                     Occurred {q.occurredCount}x

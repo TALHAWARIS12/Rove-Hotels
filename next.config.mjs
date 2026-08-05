@@ -13,11 +13,9 @@ const nextConfig = {
       },
     ],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
+  output: "standalone",
+  experimental: {
+    memoryBasedWorkersCount: true,
   },
 };
 
