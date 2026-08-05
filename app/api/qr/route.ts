@@ -2,7 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import QRCode from "qrcode";
 
 export async function GET(req: NextRequest) {
-  const url = req.nextUrl.searchParams.get("url") || process.env.NEXTAUTH_URL || "http://localhost:3000/chat";
+  const baseUrl = (process.env.NEXTAUTH_URL && process.env.NEXTAUTH_URL.startsWith("http")) 
+    ? process.env.NEXTAUTH_URL 
+    : (process.env.RENDER_EXTERNAL_URL || "http://localhost:3000");
+  const url = req.nextUrl.searchParams.get("url") || `${baseUrl}/chat`;
   const format = req.nextUrl.searchParams.get("format") || "png";
 
   try {
