@@ -307,26 +307,26 @@ export default function WelcomePage() {
             <div>
               <span className="badge badge-gold mb-2">MOBILE QR ENTRY POINT</span>
               <h3 className="heading-display text-2xl" style={{ color: "var(--text-primary)" }}>
-                Scan to Test on Mobile
+                Scan to Open on Mobile
               </h3>
               <p className="text-xs text-gray-400 mt-1">
-                Scan this QR code with your smartphone camera while connected to the same Wi-Fi network!
+                Scan this QR code with your smartphone camera to launch the Rove AI Concierge instantly.
               </p>
             </div>
 
             <div className="bg-white p-4 rounded-xl border border-gray-200 inline-block mx-auto shadow-inner">
               <img
-                src={`/api/qr?url=http://${typeof window !== 'undefined' ? window.location.hostname : '192.168.1.6'}:3000/chat&format=png`}
+                src={`/api/qr?url=${typeof window !== 'undefined' ? window.location.origin : 'https://rove-hotels.onrender.com'}/chat&format=png`}
                 alt="Rove Mobile QR Code"
                 className="w-48 h-48 mx-auto object-contain"
               />
             </div>
 
             <div className="bg-white/5 p-3 rounded-xl border border-white/10 text-left text-xs space-y-1.5 font-mono">
-              <p className="text-amber-400 font-bold">💡 How to open on your phone:</p>
-              <p className="text-gray-300">1. Connect your phone to your local Wi-Fi.</p>
-              <p className="text-gray-300">2. Run: <code className="bg-black/40 px-1 py-0.5 rounded text-amber-300">npm run dev:host</code> in terminal.</p>
-              <p className="text-gray-300">3. Scan QR code above with your phone camera!</p>
+              <p className="text-amber-400 font-bold">💡 How to use:</p>
+              <p className="text-gray-300">1. Open your smartphone camera.</p>
+              <p className="text-gray-300">2. Point it at the QR code above.</p>
+              <p className="text-gray-300">3. Tap the link that appears on your screen.</p>
             </div>
 
             <div className="pt-2">
