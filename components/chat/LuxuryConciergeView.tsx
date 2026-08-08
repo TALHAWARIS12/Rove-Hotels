@@ -143,6 +143,7 @@ export default function LuxuryConciergeView() {
         body: JSON.stringify({
           message: query,
           sessionId: sessionId || "default_session",
+          language: selectedLang || "en",
         }),
       });
 
